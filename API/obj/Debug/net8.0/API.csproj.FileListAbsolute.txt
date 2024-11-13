@@ -147,3 +147,4 @@ C:\Users\IT CLASS\Documents\project\CleanVersion\HeavyEquipment-Be\API\obj\Debug
 C:\Users\IT CLASS\Documents\project\CleanVersion\HeavyEquipment-Be\API\obj\Debug\net8.0\API.pdb
 C:\Users\IT CLASS\Documents\project\CleanVersion\HeavyEquipment-Be\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 C:\Users\IT CLASS\Documents\project\CleanVersion\HeavyEquipment-Be\API\obj\Debug\net8.0\ref\API.dll
+C:\Users\IT CLASS\Documents\project\CleanVersion\HeavyEquipment-Be\API\obj\Debug\net8.0\API.sourcelink.json

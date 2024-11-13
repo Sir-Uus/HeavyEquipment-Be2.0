@@ -79,8 +79,7 @@ namespace API.Extensions
                                 "https://192.168.45.17:5000",
                                 "http://192.168.52.211:3000",
                                 "http://192.168.52.211:5000",
-                                "https://ec56-157-20-236-226.ngrok-free.app",
-                                "https://ee8d-157-20-236-226.ngrok-free.app"
+                                "http://103.127.137.194:3000"
                             );
                     }
                 );
