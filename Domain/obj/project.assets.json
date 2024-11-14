@@ -820,11 +820,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\IT CLASS\\Documents\\project\\CleanVersion\\HeavyEquipment-Be\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\IT CLASS\\Documents\\project\\CleanVersion\\HeavyEquipment-Be\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "c:\\Users\\IT CLASS\\Documents\\project\\CleanVersion\\HeavyEquipment-Be\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\IT CLASS\\Documents\\project\\CleanVersion\\HeavyEquipment-Be\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\IT CLASS\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\IT CLASS\\Documents\\project\\CleanVersion\\HeavyEquipment-Be\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\IT CLASS\\Documents\\project\\CleanVersion\\HeavyEquipment-Be\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\IT CLASS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -880,7 +880,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

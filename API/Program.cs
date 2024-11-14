@@ -3,16 +3,18 @@ using API.Middleware;
 // using API.Support;
 using Application.HubGathering.Stockhub;
 using Application.Messages.Command.ChatHub;
-using Persistence.Data;
+using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Persistence.Data;
 using Persistence.Seeder;
-using Microsoft.AspNetCore.Identity;
-using Domain.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
+
 // builder.Services.ConfigureSameSiteNoneCookies();
+
 builder.Services.AddControllers(opt =>
 {
     var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
@@ -50,7 +52,11 @@ try
 {
     var context = services.GetRequiredService<DataContext>();
     await context.Database.MigrateAsync();
-    await Seed.SeedData(context, services.GetRequiredService<UserManager<User>>(), services.GetRequiredService<RoleManager<IdentityRole>>());
+    await Seed.SeedData(
+        context,
+        services.GetRequiredService<UserManager<User>>(),
+        services.GetRequiredService<RoleManager<IdentityRole>>()
+    );
 }
 catch (Exception ex)
 {
