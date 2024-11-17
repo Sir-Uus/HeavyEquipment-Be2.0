@@ -16,41 +16,30 @@ public class ChatHubClass : Hub
         _mediator = mediator;
     }
 
-    public async Task SendMessageToAll(string user, string message)
+    public override Task OnConnectedAsync()
     {
-        await Clients.All.SendAsync("ReceiveMessage", user, message);
+        var userId = Context
+            .User?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)
+            ?.Value;
+        Console.WriteLine($"User connected: {userId}");
+        return base.OnConnectedAsync();
     }
 
-    public async Task SendMessageToReceiver(string sender, string receiver, string message)
+    public async Task SendMessage(string senderId, string receiverId, string message)
     {
-        var userId = _context.Users.FirstOrDefault(u => u.Email.ToLower() == receiver.ToLower()).Id;
-
-        if (!string.IsNullOrEmpty(userId))
+        var command = new CreateMessageCommand.Command
         {
-            Console.WriteLine("Sending message to user: " + userId);
-            await Clients.User(userId).SendAsync("ReceiveMessage", sender, message);
+            SenderId = senderId,
+            ReceiverId = receiverId,
+            Message = message
+        };
+
+        var result = await _mediator.Send(command);
+
+        if (result)
+        {
+            Console.WriteLine($"Message from {senderId} to {receiverId}: {message}");
+            await Clients.User(receiverId).SendAsync("ReceiveMessage", senderId, message);
         }
     }
-
-    // public async Task SendMessage(string senderId, string receiverId, string message)
-    // {
-    //     if (string.IsNullOrEmpty(senderId))
-    //     {
-    //         throw new HubException("Sender ID is missing");
-    //     }
-
-    //     // await Clients.User(receiverId).SendAsync("ReceiveMessage", senderId, displayName, message);
-
-    //     await Clients.All.SendAsync("ReceiveMessage", senderId, message);
-
-    //     var command = new CreateMessageCommand.Command
-    //     {
-    //         SenderId = senderId,
-    //         ReceiverId = receiverId,
-    //         Message = message
-    //     };
-
-    //     await _mediator.Send(command);
-    //     Console.WriteLine($"Received message from {senderId} to {receiverId}: {message}");
-    // }
 }

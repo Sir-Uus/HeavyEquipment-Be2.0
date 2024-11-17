@@ -13,8 +13,6 @@ using Persistence.Seeder;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// builder.Services.ConfigureSameSiteNoneCookies();
-
 builder.Services.AddControllers(opt =>
 {
     var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();

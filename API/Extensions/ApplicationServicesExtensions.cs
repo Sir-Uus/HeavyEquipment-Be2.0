@@ -75,11 +75,10 @@ namespace API.Extensions
                             .WithOrigins(
                                 "http://localhost:3000",
                                 "http://localhost:8081",
-                                "http://192.168.45.17:3000",
-                                "https://192.168.45.17:5000",
-                                "http://192.168.52.211:3000",
-                                "http://192.168.52.211:5000",
-                                "http://103.127.137.194:3000"
+                                "https://103.127.137.194:3000",
+                                "https://heavy-equipment.my.id",
+                                "http://heavy-equipment.my.id",
+                                "https://www.heavy-equipment.my.id"
                             );
                     }
                 );

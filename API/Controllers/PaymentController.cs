@@ -135,7 +135,11 @@ namespace API.Controllers
             if (!updateResult.IsSuccess)
                 return StatusCode(500, "Failed to update transaction status.");
 
-            return Ok("Payment completed successfully.");
+            string htmlContent =
+                "<h1>Payment Successful</h1>"
+                + "<p>Your payment has been completed successfully. Thank you for your purchase!</p>";
+
+            return Content(htmlContent, "text/html");
         }
 
         [HttpPost]

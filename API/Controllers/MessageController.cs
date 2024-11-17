@@ -1,7 +1,4 @@
-using System;
-using Application.Messages.Command.CreateMessage;
 using Application.Messages.Query.GetMessage;
-using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

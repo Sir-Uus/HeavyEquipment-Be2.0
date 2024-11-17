@@ -1,9 +1,5 @@
-using Application.Messages.Command.ChatHub;
-using AutoMapper;
 using Domain.Entities;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.SignalR;
 using Persistence.Data;
 
 namespace Application.Messages.Command.CreateMessage;
