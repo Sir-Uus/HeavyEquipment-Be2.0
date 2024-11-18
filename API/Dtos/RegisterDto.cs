@@ -14,8 +14,8 @@ namespace API.Dtos
 
         [Required]
         [RegularExpression(
-            "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{6,12}$",
-            ErrorMessage = "Password must be 6-12 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
+            "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$",
+            ErrorMessage = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number."
         )]
         public string Password { get; set; }
 
