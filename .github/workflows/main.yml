@@ -34,7 +34,7 @@ jobs:
           echo "Connecting to database using: $DATABASE_CONNECTION"
           echo "Using token key: $TOKEN_KEY"
           echo "FACEBOOK_SECRET: $FACEBOOK_SECRET"
-          echo "GOOGLE_SECRET: $GOOGLE_SECRET"
+          echo "GOOGLE_SECRETT: $GOOGLE_SECRET"
 
       # Deploy to VPS
       - name: Deploy to VPS
