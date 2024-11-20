@@ -67,6 +67,13 @@ namespace API.Controllers
         }
 
         [AllowAnonymous]
+        [HttpGet("all2")]
+        public async Task<IActionResult> GetEquipmentsAll2()
+        {
+            return HandleRegularResult(await Mediator.Send(new GetEquipmentAllQuery.Query()));
+        }
+
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEquipment(int id)
         {
