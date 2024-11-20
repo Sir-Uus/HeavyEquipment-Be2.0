@@ -32,7 +32,7 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             cd HeavyEquipment
-            cd HeavyEquipment-Be2
+            cd HeavyEquipment-Be2.0
             git pull origin master
             sudo docker-compose down || true
             sudo docker-compose pull
