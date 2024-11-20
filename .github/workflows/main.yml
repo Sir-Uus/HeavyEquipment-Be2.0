@@ -23,6 +23,18 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y docker-compose
 
+      - name: Use Environment Secrets
+        env:
+          DATABASE_CONNECTION: ${{ secrets.DATABASE_CONNECTION }}
+          TOKEN_KEY: ${{ secrets.TOKEN_KEY }}
+          FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
+          GOOGLE_SECRET: ${{ secrets.GOOGLE_SECRET }}
+        run: |
+          echo "Connecting to database using: $DATABASE_CONNECTION"
+          echo "Using token key: $TOKEN_KEY"
+          echo "FACEBOOK_SECRET: $FACEBOOK_SECRET"
+          ECHO "GOOGLE_SECRET: $GOOGLE_SECRET"
+
       # Deploy to VPS
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
