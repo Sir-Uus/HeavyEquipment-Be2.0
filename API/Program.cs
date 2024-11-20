@@ -20,6 +20,7 @@ builder.Services.AddControllers(opt =>
 });
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
+builder.Configuration.AddEnvironmentVariables();
 
 var app = builder.Build();
 
